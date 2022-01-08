@@ -2,6 +2,17 @@
 
 [![ancieque/nginx-tcp-forward](https://img.shields.io/docker/pulls/ancieque/nginx-tcp-forward)](https://hub.docker.com/r/ancieque/nginx-tcp-forward)
 
+This Docker image is intended to be used in a multihost docker environment with an overlay network.
+While the docker swarm routing mesh would do the job for some deployments,
+it won't work for regular containers that are attached to the network that
+you might want to route to from a central ingress server.
+
+Also for docker swarm services this image might be more useful
+than published docker swarm ports. This is because docker swarm does not allow
+to bind to ips and therefore any published port is available via the host from
+any docker container.
+
+Note: For Docker Swarm networks, make sure to use properly encrypted ones (including the ingress network!).
 ## Usage (Ansible example)
 
 ```
