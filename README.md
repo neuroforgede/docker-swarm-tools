@@ -1,6 +1,6 @@
 # nginx-tcp-forward
 
-[![ancieque/nginx-tcp-forward](https://img.shields.io/docker/pulls/ancieque/nginx-tcp-forward)](https://hub.docker.com/r/ancieque/nginx-tcp-forward)
+[![neuroforgede/nginx-tcp-forward](https://img.shields.io/docker/pulls/neuroforgede/nginx-tcp-forward)](https://hub.docker.com/r/neuroforgede/nginx-tcp-forward)
 
 This Docker image is intended to be used in a multihost docker environment with an overlay network.
 While the docker swarm routing mesh would do the job for some deployments,
@@ -16,9 +16,9 @@ Note: For Docker Swarm networks, make sure to use properly encrypted ones (inclu
 ## Usage (Ansible example)
 
 ```
-- name: download docker image ancieque/nginx-tcp-forward
+- name: download docker image neuroforgede/nginx-tcp-forward
   docker_image:
-    name: "ancieque/nginx-tcp-forward"
+    name: "neuroforgede/nginx-tcp-forward"
     tag: "0.1"
     force_source: yes
     source: pull
@@ -26,7 +26,7 @@ Note: For Docker Swarm networks, make sure to use properly encrypted ones (inclu
 - name: "create nginx tcp proxy"
   docker_container:
     name: "{{ nginx_tcp_forward_container_name }}"
-    image: "ancieque/nginx-tcp-forward:0.1"
+    image: "neuroforgede/nginx-tcp-forward:0.1"
     recreate: true
     restart_policy: unless-stopped
     env:
