@@ -8,7 +8,7 @@ check_result () {
     fi
 }
 
-envsubst '$WORKER_CONNECTIONS, $DNS_RESOLVER, $DNS_RESOLVER_VALID, $TCP_UPSTREAM' < /etc/nginx/templates/nginx.conf > /etc/nginx/nginx.conf
+envsubst '$WORKER_CONNECTIONS, $TCP_PROXY_LISTEN_PORT, $DNS_RESOLVER, $DNS_RESOLVER_VALID, $TCP_UPSTREAM' < /etc/nginx/templates/nginx.conf > /etc/nginx/nginx.conf
 check_result "failed to template /etc/nginx/nginx.conf"
 
 if [ -z "$TCP_UPSTREAM" ]; then
