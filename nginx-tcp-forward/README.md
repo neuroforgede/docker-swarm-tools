@@ -33,6 +33,7 @@ Note: For Docker Swarm networks, make sure to use properly encrypted ones (inclu
       WORKER_CONNECTIONS: "768"
       DNS_RESOLVER: "127.0.0.11"
       DNS_RESOLVER_VALID: "10s"
+      TCP_PROXY_LISTEN_PORT: "12345"
       TCP_UPSTREAM: "{{ nginx_tcp_forward_upstream }}"
     ports:
       - "127.0.0.1:{{ nginx_tcp_forward_port }}:12345"
